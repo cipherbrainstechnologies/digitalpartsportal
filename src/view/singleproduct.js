@@ -15,6 +15,8 @@ import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
 /* css */
 import '../assets/css/style.css';
 
+import $ from 'jquery';
+
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -99,6 +101,13 @@ function SingleProduct() {
 
     const [nav1, setNav1] = useState();
     const [nav2, setNav2] = useState();
+
+    const CompatibleVehicles = () => {
+        $('.compatible_div').on('click', function (e) {
+            $('.CompatibleVehiclesOption').toggle();
+            e.stopPropagation();
+        });
+    }
 
 
     return (
@@ -411,7 +420,117 @@ function SingleProduct() {
                                                 <Tab.Pane eventKey='Compatible'>
                                                     <Row>
                                                         <Col>
-                                                            <p>The little Love-god lying once asleep, Laid by his side his heart-inflaming brand, Whilst many nymphs that vow'd chaste life to keep Came tripping by; but in her maiden hand The fairest votary took up that fire Which many legions of true hearts had warm'd; And so the general of hot desire Was, sleeping, by a virgin hand disarm'd. This brand she quenched in a cool well by, Which from Love's fire took heat perpetual,The little Love-god lying once asleep, Laid by his side his heart-inflaming brand, Whilst many nymphs that vow'd chaste life to keep Came tripping by; but in her maiden hand The fairest votary took up that fire Which many legions of true hearts had warm'd; And so the general of hot desire Was, sleeping, by a virgin hand disarm'd. This brand she quenched in a cool well by, Which from Love's fire took heat perpetual,</p>
+                                                            <div className='compatible_div' onClick={CompatibleVehicles}><h6>Subaru</h6></div>
+                                                        </Col>
+                                                    </Row>
+                                                    <Row style={{display: 'none'}} className='CompatibleVehiclesOption'>
+                                                        <Col md={12}>
+                                                            <Accordion>
+                                                                <Accordion.Item eventKey="0">
+                                                                    <Accordion.Header>Liberty</Accordion.Header>
+                                                                    <Accordion.Body className='p-0'>
+                                                                        <div className='vehical_info p-2'>
+                                                                            <Row>
+                                                                                <Col sm={12} className='pb-2'>Subaru Liberty 2.0 (BP) 2005 - 2009</Col>
+                                                                            </Row>
+                                                                            <Row className='small'>
+                                                                                <Col sm={3}>Year</Col>
+                                                                                <Col sm={3}>2005 - 2009</Col>
+                                                                                <Col sm={3}>Engine</Col>
+                                                                                <Col sm={3}>Petrol</Col>
+                                                                                <Col sm={3}>Series</Col>
+                                                                                <Col sm={3}>2.0 (BP)</Col>
+                                                                                <Col sm={3}>KW</Col>
+                                                                                <Col sm={3}>121</Col>
+                                                                                <Col sm={3}>Body</Col>
+                                                                                <Col sm={3}>Wagon</Col>
+                                                                                <Col sm={3}>Notes</Col>
+                                                                                <Col sm={3}>--</Col>
+                                                                            </Row>
+                                                                            <Row>
+                                                                                <Col sm={12} className='text-right py-2'>
+                                                                                    <Button variant='primary' size='sm' className='m-0'>Set Vehicle</Button>
+                                                                                </Col>
+                                                                            </Row>
+                                                                        </div>
+                                                                        <div className='vehical_info p-2'>
+                                                                            <Row>
+                                                                                <Col sm={12} className='pb-2'>Subaru Liberty 2.0 (BP) 2005 - 2009</Col>
+                                                                            </Row>
+                                                                            <Row className='small'>
+                                                                                <Col sm={3}>Year</Col>
+                                                                                <Col sm={3}>2005 - 2009</Col>
+                                                                                <Col sm={3}>Engine</Col>
+                                                                                <Col sm={3}>Petrol</Col>
+                                                                                <Col sm={3}>Series</Col>
+                                                                                <Col sm={3}>2.0 (BP)</Col>
+                                                                                <Col sm={3}>KW</Col>
+                                                                                <Col sm={3}>121</Col>
+                                                                                <Col sm={3}>Body</Col>
+                                                                                <Col sm={3}>Wagon</Col>
+                                                                                <Col sm={3}>Notes</Col>
+                                                                                <Col sm={3}>--</Col>
+                                                                            </Row>
+                                                                            <Row>
+                                                                                <Col sm={12} className='text-right py-2'>
+                                                                                    <Button variant='primary' size='sm' className='m-0'>Set Vehicle</Button>
+                                                                                </Col>
+                                                                            </Row>
+                                                                        </div>
+                                                                        <div className='vehical_info p-2'>
+                                                                            <Row>
+                                                                                <Col sm={12} className='pb-2'>Subaru Liberty 2.0 (BP) 2005 - 2009</Col>
+                                                                            </Row>
+                                                                            <Row className='small'>
+                                                                                <Col sm={3}>Year</Col>
+                                                                                <Col sm={3}>2005 - 2009</Col>
+                                                                                <Col sm={3}>Engine</Col>
+                                                                                <Col sm={3}>Petrol</Col>
+                                                                                <Col sm={3}>Series</Col>
+                                                                                <Col sm={3}>2.0 (BP)</Col>
+                                                                                <Col sm={3}>KW</Col>
+                                                                                <Col sm={3}>121</Col>
+                                                                                <Col sm={3}>Body</Col>
+                                                                                <Col sm={3}>Wagon</Col>
+                                                                                <Col sm={3}>Notes</Col>
+                                                                                <Col sm={3}>--</Col>
+                                                                            </Row>
+                                                                            <Row>
+                                                                                <Col sm={12} className='text-right py-2'>
+                                                                                    <Button variant='primary' size='sm' className='m-0'>Set Vehicle</Button>
+                                                                                </Col>
+                                                                            </Row>
+                                                                        </div>
+                                                                    </Accordion.Body>
+                                                                </Accordion.Item>
+                                                                <Accordion.Item eventKey="1">
+                                                                    <Accordion.Header>Impreza</Accordion.Header>
+                                                                    <Accordion.Body>
+                                                                        <Row>
+                                                                            <Col sm={12} className='pb-2'>Subaru Liberty 2.0 (BP) 2005 - 2009</Col>
+                                                                        </Row>
+                                                                        <Row className='small'>
+                                                                            <Col sm={3}>Year</Col>
+                                                                            <Col sm={3}>2005 - 2009</Col>
+                                                                            <Col sm={3}>Engine</Col>
+                                                                            <Col sm={3}>Petrol</Col>
+                                                                            <Col sm={3}>Series</Col>
+                                                                            <Col sm={3}>2.0 (BP)</Col>
+                                                                            <Col sm={3}>KW</Col>
+                                                                            <Col sm={3}>121</Col>
+                                                                            <Col sm={3}>Body</Col>
+                                                                            <Col sm={3}>Wagon</Col>
+                                                                            <Col sm={3}>Notes</Col>
+                                                                            <Col sm={3}>--</Col>
+                                                                        </Row>
+                                                                        <Row>
+                                                                            <Col sm={12} className='text-right py-2'>
+                                                                                <Button variant='primary' size='sm' className='m-0'>Price</Button>
+                                                                            </Col>
+                                                                        </Row>
+                                                                    </Accordion.Body>
+                                                                </Accordion.Item>
+                                                            </Accordion>
                                                         </Col>
                                                     </Row>
                                                 </Tab.Pane>
@@ -436,11 +555,12 @@ function SingleProduct() {
                         </Container>
                     </div>
                 </div>
-            ))}
+            ))
+            }
 
             <Footer />
 
-        </div>
+        </div >
     )
 }
 export default SingleProduct;

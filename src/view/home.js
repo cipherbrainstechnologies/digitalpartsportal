@@ -14,6 +14,8 @@ import { faTruck, faCogs, faEnvelopeOpen, faCar } from '@fortawesome/free-solid-
 /* css */
 import '../assets/css/style.css';
 
+import $ from 'jquery';
+
 /* images */
 import Oil_Filters from '../assets/image/Oil_Filters.jpg';
 import Brake_Fluid from '../assets/image/Brake_Fluid.jpg';
@@ -78,16 +80,467 @@ const PopularBrands = [
     { id: 6, link: '#0', image: penrite }
 ];
 
+const ClearVehicle = () => {
+    $('.ClearVehicle').on('click', function (e) {
+        $('.selectvehicle1').show();
+        $('.ClearVehicle').hide();
+        e.stopPropagation();
+    });
+}
+
+const selectvehicle1 = () => {
+    $('.selectvehicle1 li').on('click', function (e) {
+        $('.selectvehicle2').show();
+        $('.selectvehicle1').hide();
+        e.stopPropagation();
+    });
+}
+
+
 function Home() {
     return (
         <div className='main_div'>
 
             <Header />
 
-            {/* Subscribe section Start */}
+            {/* vehicle section Start */}
             <div className='top_section bg-light py-5' style={{ backgroundImage: 'url(' + top + ')', }}>
                 <Container>
-                    <Row className='justify-content-md-center'>
+                    <Row className='selectvehicle1' style={{display: 'none'}}>
+                        <Col md={4}>
+                            <div className='card h-100'>
+                                <div className='card-body'>
+                                    <h5 className='text-center'>Find the <b>right parts</b> from the <b>best brands</b> for <b>your car</b>.</h5>
+                                    <hr />
+                                    <div className='option_div'>
+                                        <div className='list_div'>Select Make</div>
+                                        <ul className='list-unstyled selectoption_height selectvehicle1 mb-0' onClick={selectvehicle1}>
+                                            <li className='py-1 px-2'>Audi</li>
+                                            <li className='py-1 px-2'>BMW</li>
+                                            <li className='py-1 px-2'>Ford</li>
+                                            <li className='py-1 px-2'>Holden</li>
+                                            <li className='py-1 px-2'>Mazda</li>
+                                            <li className='py-1 px-2'>Mercedes-Benz</li>
+                                            <li className='py-1 px-2'>Nissan</li>
+                                            <li className='py-1 px-2'>Subaru</li>
+                                            <li className='py-1 px-2'>Toyota</li>
+                                            <li className='py-1 px-2'>Volkswagen</li>
+                                            <li className='py-1 px-2'>ABARTH</li>
+                                            <li className='py-1 px-2'>AC</li>
+                                            <li className='py-1 px-2'>Alfa Romeo</li>
+                                            <li className='py-1 px-2'>ALPINA</li>
+                                            <li className='py-1 px-2'>ALVIS</li>
+                                            <li className='py-1 px-2'>AMC</li>
+                                            <li className='py-1 px-2'>Armstrong Siddeley</li>
+                                            <li className='py-1 px-2'>Asia Motors</li>
+                                            <li className='py-1 px-2'>Aston Martin</li>
+                                            <li className='py-1 px-2'>Audi</li>
+                                            <li className='py-1 px-2'>Austin</li>
+                                            <li className='py-1 px-2'>Austin-Healey</li>
+                                            <li className='py-1 px-2'>Bedford</li>
+                                            <li className='py-1 px-2'>Bentley</li>
+                                            <li className='py-1 px-2'>BMC</li>
+                                            <li className='py-1 px-2'>BMW</li>
+                                            <li className='py-1 px-2'>Bugatti</li>
+                                            <li className='py-1 px-2'>Buick</li>
+                                            <li className='py-1 px-2'>Cadillac</li>
+                                            <li className='py-1 px-2'>Carbodies</li>
+                                            <li className='py-1 px-2'>Caterham</li>
+                                            <li className='py-1 px-2'>Chery</li>
+                                            <li className='py-1 px-2'>Chevrolet</li>
+                                            <li className='py-1 px-2'>Chrysler</li>
+                                            <li className='py-1 px-2'>Citroen</li>
+                                            <li className='py-1 px-2'>Daewoo</li>
+                                            <li className='py-1 px-2'>Daihatsu</li>
+                                            <li className='py-1 px-2'>Daimler</li>
+                                            <li className='py-1 px-2'>De Tomaso</li>
+                                            <li className='py-1 px-2'>DMC</li>
+                                            <li className='py-1 px-2'>Dodge</li>
+                                            <li className='py-1 px-2'>Eunos</li>
+                                            <li className='py-1 px-2'>Ferrari</li>
+                                            <li className='py-1 px-2'>Fiat</li>
+                                            <li className='py-1 px-2'>Ford</li>
+                                            <li className='py-1 px-2'>Foton</li>
+                                            <li className='py-1 px-2'>FPV</li>
+                                            <li className='py-1 px-2'>Geely</li>
+                                            <li className='py-1 px-2'>Ginetta</li>
+                                            <li className='py-1 px-2'>GMC</li>
+                                            <li className='py-1 px-2'>Great Wall</li>
+                                            <li className='py-1 px-2'>Haval</li>
+                                            <li className='py-1 px-2'>Hillman</li>
+                                            <li className='py-1 px-2'>Holden</li>
+                                            <li className='py-1 px-2'>Honda</li>
+                                            <li className='py-1 px-2'>HSV</li>
+                                            <li className='py-1 px-2'>Humber</li>
+                                            <li className='py-1 px-2'>Hummer</li>
+                                            <li className='py-1 px-2'>Hyundai</li>
+                                            <li className='py-1 px-2'>Infiniti</li>
+                                            <li className='py-1 px-2'>International</li>
+                                            <li className='py-1 px-2'>Isuzu</li>
+                                            <li className='py-1 px-2'>Iveco</li>
+                                            <li className='py-1 px-2'>Jaguar</li>
+                                            <li className='py-1 px-2'>Jeep</li>
+                                            <li className='py-1 px-2'>Jensen</li>
+                                            <li className='py-1 px-2'>JMC</li>
+                                            <li className='py-1 px-2'>Kia</li>
+                                            <li className='py-1 px-2'>Lada</li>
+                                            <li className='py-1 px-2'>Lamborghini</li>
+                                            <li className='py-1 px-2'>Lancia</li>
+                                            <li className='py-1 px-2'>Land Rover</li>
+                                            <li className='py-1 px-2'>LDV</li>
+                                            <li className='py-1 px-2'>Lexus</li>
+                                            <li className='py-1 px-2'>Leyland</li>
+                                            <li className='py-1 px-2'>Lincoln</li>
+                                            <li className='py-1 px-2'>Lotus</li>
+                                            <li className='py-1 px-2'>Lti</li>
+                                            <li className='py-1 px-2'>Mahindra</li>
+                                            <li className='py-1 px-2'>Maserati</li>
+                                            <li className='py-1 px-2'>Maybach</li>
+                                            <li className='py-1 px-2'>Mazda</li>
+                                            <li className='py-1 px-2'>Mazdaspeed</li>
+                                            <li className='py-1 px-2'>Mclaren</li>
+                                            <li className='py-1 px-2'>Mercedes-Benz</li>
+                                            <li className='py-1 px-2'>Mercury</li>
+                                            <li className='py-1 px-2'>MG</li>
+                                            <li className='py-1 px-2'>Mini</li>
+                                            <li className='py-1 px-2'>Mitsubishi</li>
+                                            <li className='py-1 px-2'>Morgan</li>
+                                            <li className='py-1 px-2'>Morris</li>
+                                            <li className='py-1 px-2'>Nissan</li>
+                                            <li className='py-1 px-2'>Noble</li>
+                                            <li className='py-1 px-2'>NSU</li>
+                                            <li className='py-1 px-2'>Opel</li>
+                                            <li className='py-1 px-2'>Peugeot</li>
+                                            <li className='py-1 px-2'>Plymouth</li>
+                                            <li className='py-1 px-2'>Pontiac</li>
+                                            <li className='py-1 px-2'>Porsche</li>
+                                            <li className='py-1 px-2'>Proton</li>
+                                            <li className='py-1 px-2'>RAM</li>
+                                            <li className='py-1 px-2'>Reliant</li>
+                                            <li className='py-1 px-2'>Renault</li>
+                                            <li className='py-1 px-2'>Riley</li>
+                                            <li className='py-1 px-2'>Rolls-Royce</li>
+                                            <li className='py-1 px-2'>Rover</li>
+                                            <li className='py-1 px-2'>Saab</li>
+                                            <li className='py-1 px-2'>Seat</li>
+                                            <li className='py-1 px-2'>Singer</li>
+                                            <li className='py-1 px-2'>Skoda</li>
+                                            <li className='py-1 px-2'>Smart</li>
+                                            <li className='py-1 px-2'>Ssangyong</li>
+                                            <li className='py-1 px-2'>Subaru</li>
+                                            <li className='py-1 px-2'>Sunbeam</li>
+                                            <li className='py-1 px-2'>Suzuki</li>
+                                            <li className='py-1 px-2'>TATA</li>
+                                            <li className='py-1 px-2'>Tesla</li>
+                                            <li className='py-1 px-2'>Toyota</li>
+                                            <li className='py-1 px-2'>Triumph</li>
+                                            <li className='py-1 px-2'>TVR</li>
+                                            <li className='py-1 px-2'>Vauxhall</li>
+                                            <li className='py-1 px-2'>Volkswagen</li>
+                                            <li className='py-1 px-2'>Volvo</li>
+                                            <li className='py-1 px-2'>Westfield</li>
+                                            <li className='py-1 px-2'>Wolseley</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row className='selectvehicle2' style={{display: 'none'}}>
+                        <Col md={12}>
+                            <div className='card h-100'>
+                                <div className='card-body'>
+                                    <Row>
+                                        <Col md={12}>
+                                            <h5 className='text-center'>Find the <b>right parts</b> from the <b>best brands</b> for <b>your car</b>.</h5>
+                                            <hr />
+                                        </Col>
+
+                                        <Col md={2} className='p-0'>
+                                            <div className='option_div'>
+                                                <div className='list_div'>Select Make</div>
+                                                <ul className='list-unstyled selectoption_height mb-0'>
+                                                    <li className='py-1 px-2'>Audi</li>
+                                                    <li className='py-1 px-2'>BMW</li>
+                                                    <li className='py-1 px-2'>Ford</li>
+                                                    <li className='py-1 px-2'>Holden</li>
+                                                    <li className='py-1 px-2'>Mazda</li>
+                                                    <li className='py-1 px-2'>Mercedes-Benz</li>
+                                                    <li className='py-1 px-2'>Nissan</li>
+                                                    <li className='py-1 px-2'>Subaru</li>
+                                                    <li className='py-1 px-2'>Toyota</li>
+                                                    <li className='py-1 px-2'>Volkswagen</li>
+                                                    <li className='py-1 px-2'>ABARTH</li>
+                                                    <li className='py-1 px-2'>AC</li>
+                                                    <li className='py-1 px-2'>Alfa Romeo</li>
+                                                    <li className='py-1 px-2'>ALPINA</li>
+                                                    <li className='py-1 px-2'>ALVIS</li>
+                                                    <li className='py-1 px-2'>AMC</li>
+                                                    <li className='py-1 px-2'>Armstrong Siddeley</li>
+                                                    <li className='py-1 px-2'>Asia Motors</li>
+                                                    <li className='py-1 px-2'>Aston Martin</li>
+                                                    <li className='py-1 px-2'>Audi</li>
+                                                    <li className='py-1 px-2'>Austin</li>
+                                                    <li className='py-1 px-2'>Austin-Healey</li>
+                                                    <li className='py-1 px-2'>Bedford</li>
+                                                    <li className='py-1 px-2'>Bentley</li>
+                                                    <li className='py-1 px-2'>BMC</li>
+                                                    <li className='py-1 px-2'>BMW</li>
+                                                    <li className='py-1 px-2'>Bugatti</li>
+                                                    <li className='py-1 px-2'>Buick</li>
+                                                    <li className='py-1 px-2'>Cadillac</li>
+                                                    <li className='py-1 px-2'>Carbodies</li>
+                                                    <li className='py-1 px-2'>Caterham</li>
+                                                    <li className='py-1 px-2'>Chery</li>
+                                                    <li className='py-1 px-2'>Chevrolet</li>
+                                                    <li className='py-1 px-2'>Chrysler</li>
+                                                    <li className='py-1 px-2'>Citroen</li>
+                                                    <li className='py-1 px-2'>Daewoo</li>
+                                                    <li className='py-1 px-2'>Daihatsu</li>
+                                                    <li className='py-1 px-2'>Daimler</li>
+                                                    <li className='py-1 px-2'>De Tomaso</li>
+                                                    <li className='py-1 px-2'>DMC</li>
+                                                    <li className='py-1 px-2'>Dodge</li>
+                                                    <li className='py-1 px-2'>Eunos</li>
+                                                    <li className='py-1 px-2'>Ferrari</li>
+                                                    <li className='py-1 px-2'>Fiat</li>
+                                                    <li className='py-1 px-2'>Ford</li>
+                                                    <li className='py-1 px-2'>Foton</li>
+                                                    <li className='py-1 px-2'>FPV</li>
+                                                    <li className='py-1 px-2'>Geely</li>
+                                                    <li className='py-1 px-2'>Ginetta</li>
+                                                    <li className='py-1 px-2'>GMC</li>
+                                                    <li className='py-1 px-2'>Great Wall</li>
+                                                    <li className='py-1 px-2'>Haval</li>
+                                                    <li className='py-1 px-2'>Hillman</li>
+                                                    <li className='py-1 px-2'>Holden</li>
+                                                    <li className='py-1 px-2'>Honda</li>
+                                                    <li className='py-1 px-2'>HSV</li>
+                                                    <li className='py-1 px-2'>Humber</li>
+                                                    <li className='py-1 px-2'>Hummer</li>
+                                                    <li className='py-1 px-2'>Hyundai</li>
+                                                    <li className='py-1 px-2'>Infiniti</li>
+                                                    <li className='py-1 px-2'>International</li>
+                                                    <li className='py-1 px-2'>Isuzu</li>
+                                                    <li className='py-1 px-2'>Iveco</li>
+                                                    <li className='py-1 px-2'>Jaguar</li>
+                                                    <li className='py-1 px-2'>Jeep</li>
+                                                    <li className='py-1 px-2'>Jensen</li>
+                                                    <li className='py-1 px-2'>JMC</li>
+                                                    <li className='py-1 px-2'>Kia</li>
+                                                    <li className='py-1 px-2'>Lada</li>
+                                                    <li className='py-1 px-2'>Lamborghini</li>
+                                                    <li className='py-1 px-2'>Lancia</li>
+                                                    <li className='py-1 px-2'>Land Rover</li>
+                                                    <li className='py-1 px-2'>LDV</li>
+                                                    <li className='py-1 px-2'>Lexus</li>
+                                                    <li className='py-1 px-2'>Leyland</li>
+                                                    <li className='py-1 px-2'>Lincoln</li>
+                                                    <li className='py-1 px-2'>Lotus</li>
+                                                    <li className='py-1 px-2'>Lti</li>
+                                                    <li className='py-1 px-2'>Mahindra</li>
+                                                    <li className='py-1 px-2'>Maserati</li>
+                                                    <li className='py-1 px-2'>Maybach</li>
+                                                    <li className='py-1 px-2'>Mazda</li>
+                                                    <li className='py-1 px-2'>Mazdaspeed</li>
+                                                    <li className='py-1 px-2'>Mclaren</li>
+                                                    <li className='py-1 px-2'>Mercedes-Benz</li>
+                                                    <li className='py-1 px-2'>Mercury</li>
+                                                    <li className='py-1 px-2'>MG</li>
+                                                    <li className='py-1 px-2'>Mini</li>
+                                                    <li className='py-1 px-2'>Mitsubishi</li>
+                                                    <li className='py-1 px-2'>Morgan</li>
+                                                    <li className='py-1 px-2'>Morris</li>
+                                                    <li className='py-1 px-2'>Nissan</li>
+                                                    <li className='py-1 px-2'>Noble</li>
+                                                    <li className='py-1 px-2'>NSU</li>
+                                                    <li className='py-1 px-2'>Opel</li>
+                                                    <li className='py-1 px-2'>Peugeot</li>
+                                                    <li className='py-1 px-2'>Plymouth</li>
+                                                    <li className='py-1 px-2'>Pontiac</li>
+                                                    <li className='py-1 px-2'>Porsche</li>
+                                                    <li className='py-1 px-2'>Proton</li>
+                                                    <li className='py-1 px-2'>RAM</li>
+                                                    <li className='py-1 px-2'>Reliant</li>
+                                                    <li className='py-1 px-2'>Renault</li>
+                                                    <li className='py-1 px-2'>Riley</li>
+                                                    <li className='py-1 px-2'>Rolls-Royce</li>
+                                                    <li className='py-1 px-2'>Rover</li>
+                                                    <li className='py-1 px-2'>Saab</li>
+                                                    <li className='py-1 px-2'>Seat</li>
+                                                    <li className='py-1 px-2'>Singer</li>
+                                                    <li className='py-1 px-2'>Skoda</li>
+                                                    <li className='py-1 px-2'>Smart</li>
+                                                    <li className='py-1 px-2'>Ssangyong</li>
+                                                    <li className='py-1 px-2'>Subaru</li>
+                                                    <li className='py-1 px-2'>Sunbeam</li>
+                                                    <li className='py-1 px-2'>Suzuki</li>
+                                                    <li className='py-1 px-2'>TATA</li>
+                                                    <li className='py-1 px-2'>Tesla</li>
+                                                    <li className='py-1 px-2'>Toyota</li>
+                                                    <li className='py-1 px-2'>Triumph</li>
+                                                    <li className='py-1 px-2'>TVR</li>
+                                                    <li className='py-1 px-2'>Vauxhall</li>
+                                                    <li className='py-1 px-2'>Volkswagen</li>
+                                                    <li className='py-1 px-2'>Volvo</li>
+                                                    <li className='py-1 px-2'>Westfield</li>
+                                                    <li className='py-1 px-2'>Wolseley</li>
+                                                </ul>
+                                            </div>
+                                        </Col>
+                                        <Col md={2} className='p-0'>
+                                            <div className='option_div'>
+                                                <div className='list_div'>Select Model</div>
+                                                <ul className='list-unstyled selectoption_height mb-0'>
+                                                    <li className='py-1 px-2'>75</li>
+                                                    <li className='py-1 px-2'>80</li>
+                                                    <li className='py-1 px-2'>90</li>
+                                                    <li className='py-1 px-2'>100</li>
+                                                    <li className='py-1 px-2'>200</li>
+                                                    <li className='py-1 px-2'>A1</li>
+                                                    <li className='py-1 px-2'>A3</li>
+                                                    <li className='py-1 px-2'>A4</li>
+                                                    <li className='py-1 px-2'>A4 Allroad</li>
+                                                    <li className='py-1 px-2'>A5</li>
+                                                    <li className='py-1 px-2'>A6</li>
+                                                    <li className='py-1 px-2'>A6 Allroad</li>
+                                                    <li className='py-1 px-2'>A7</li>
+                                                    <li className='py-1 px-2'>A8</li>
+                                                    <li className='py-1 px-2'>Allroad</li>
+                                                    <li className='py-1 px-2'>Cabriolet</li>
+                                                    <li className='py-1 px-2'>E-Tron</li>
+                                                    <li className='py-1 px-2'>Fox</li>
+                                                    <li className='py-1 px-2'>Q2</li>
+                                                    <li className='py-1 px-2'>Q3</li>
+                                                    <li className='py-1 px-2'>Q5</li>
+                                                    <li className='py-1 px-2'>Q7</li>
+                                                    <li className='py-1 px-2'>Q8</li>
+                                                    <li className='py-1 px-2'>R8</li>
+                                                    <li className='py-1 px-2'>RS Q3</li>
+                                                    <li className='py-1 px-2'>RS3</li>
+                                                    <li className='py-1 px-2'>RS4</li>
+                                                    <li className='py-1 px-2'>RS5</li>
+                                                    <li className='py-1 px-2'>RS6</li>
+                                                    <li className='py-1 px-2'>RS7</li>
+                                                    <li className='py-1 px-2'>S1</li>
+                                                    <li className='py-1 px-2'>S2</li>
+                                                    <li className='py-1 px-2'>S3</li>
+                                                    <li className='py-1 px-2'>S4</li>
+                                                    <li className='py-1 px-2'>S5</li>
+                                                    <li className='py-1 px-2'>S6</li>
+                                                    <li className='py-1 px-2'>S7</li>
+                                                    <li className='py-1 px-2'>S8</li>
+                                                    <li className='py-1 px-2'>SQ5</li>
+                                                    <li className='py-1 px-2'>SQ7</li>
+                                                    <li className='py-1 px-2'>Super 90</li>
+                                                    <li className='py-1 px-2'>TT</li>
+                                                    <li className='py-1 px-2'>TT RS</li>
+                                                    <li className='py-1 px-2'>TTS</li>
+                                                    <li className='py-1 px-2'>V8</li>
+                                                </ul>
+                                            </div>
+                                        </Col>
+                                        <Col md={2} className='p-0'>
+                                            <div className='option_div'>
+                                                <div className='list_div'>Select Year</div>
+                                                <ul className='list-unstyled selectoption_height mb-0'>
+                                                    <li className='py-1 px-2'>2021</li>
+                                                    <li className='py-1 px-2'>2020</li>
+                                                    <li className='py-1 px-2'>2019</li>
+                                                    <li className='py-1 px-2'>2018</li>
+                                                    <li className='py-1 px-2'>2017</li>
+                                                    <li className='py-1 px-2'>2016</li>
+                                                    <li className='py-1 px-2'>2015</li>
+                                                    <li className='py-1 px-2'>2014</li>
+                                                    <li className='py-1 px-2'>2013</li>
+                                                    <li className='py-1 px-2'>2012</li>
+                                                    <li className='py-1 px-2'>2011</li>
+                                                    <li className='py-1 px-2'>2010</li>
+                                                    <li className='py-1 px-2'>2009</li>
+                                                    <li className='py-1 px-2'>2008</li>
+                                                    <li className='py-1 px-2'>2007</li>
+                                                    <li className='py-1 px-2'>2006</li>
+                                                    <li className='py-1 px-2'>2005</li>
+                                                    <li className='py-1 px-2'>2004</li>
+                                                    <li className='py-1 px-2'>2003</li>
+                                                    <li className='py-1 px-2'>2002</li>
+                                                    <li className='py-1 px-2'>2001</li>
+                                                    <li className='py-1 px-2'>2000</li>
+                                                    <li className='py-1 px-2'>1999</li>
+                                                    <li className='py-1 px-2'>1998</li>
+                                                    <li className='py-1 px-2'>1997</li>
+                                                    <li className='py-1 px-2'>1996</li>
+                                                </ul>
+                                            </div>
+                                        </Col>
+                                        <Col md={2} className='p-0'>
+                                            <div className='option_div'>
+                                                <div className='list_div'>Select Series</div>
+                                                <ul className='list-unstyled selectoption_height mb-0'>
+                                                    <li className='py-1 px-2'>1.0 30 TFSI (8VF,8VA) 85 kW</li>
+                                                    <li className='py-1 px-2'>1.0 TFSI (8VA) 85kw</li>
+                                                    <li className='py-1 px-2'>1.2 TFSI (8V1) 77kw</li>
+                                                    <li className='py-1 px-2'>1.4 TFSI (8V1) 103kw</li>
+                                                    <li className='py-1 px-2'>1.4 TFSI (8V1) 110kw</li>
+                                                    <li className='py-1 px-2'>1.4 TFSI (8V1) 90kw</li>
+                                                    <li className='py-1 px-2'>1.4 TFSI (8V1) 92kw</li>
+                                                    <li className='py-1 px-2'>1.4 TFSI (8V7) 103kw</li>
+                                                    <li className='py-1 px-2'>1.4 TFSI (8VA) 103kw</li>
+                                                    <li className='py-1 px-2'>1.4 TFSI (8VA) 110kw</li>
+                                                    <li className='py-1 px-2'>1.4 TFSI (8VA) 90kw</li>
+                                                    <li className='py-1 px-2'>1.4 TFSI (8VA) 92kw</li>
+                                                    <li className='py-1 px-2'>1.4 TFSI (8VS) 103kw</li>
+                                                    <li className='py-1 px-2'>1.4 TFSI (8VS) 110kw</li>
+                                                    <li className='py-1 px-2'>1.4 TFSI e-tron (8VA) 110kw</li>
+                                                    <li className='py-1 px-2'>1.4 TSI (8V7) 110kw</li>
+                                                    <li className='py-1 px-2'>1.6 TDI (8V1) 81kw</li>
+                                                    <li className='py-1 px-2'>1.6 TDI (8VA) 77kw</li>
+                                                    <li className='py-1 px-2'>1.6 TDI (8VA) 81kw</li>
+                                                    <li className='py-1 px-2'>1.6 TDI (8VA) 85kw</li>
+                                                    <li className='py-1 px-2'>1.8 TFSI (8V1) 132kw</li>
+                                                    <li className='py-1 px-2'>1.8 TFSI (8V7) 132kw</li>
+                                                    <li className='py-1 px-2'>1.8 TFSI (8VA) 132kw</li>
+                                                    <li className='py-1 px-2'>1.8 TFSI (8VS) 125kw</li>
+                                                    <li className='py-1 px-2'>1.8 TFSI (8VS) 132kw</li>
+                                                    <li className='py-1 px-2'>1.8 TFSI Quattro (8V1) 132kw</li>
+                                                    <li className='py-1 px-2'>1.8 TFSI Quattro (8V7) 132kw</li>
+                                                    <li className='py-1 px-2'>1.8 TFSI quattro (8VA) 132kw</li>
+                                                    <li className='py-1 px-2'>1.8 TFSI Quattro (8VS) 132kw</li>
+                                                    <li className='py-1 px-2'>2.0 40 TFSI (8VE,8V7) 140 kW</li>
+                                                    <li className='py-1 px-2'>2.0 TDI (8V1) 110kw</li>
+                                                    <li className='py-1 px-2'>2.0 TDI (8V7) 110kw</li>
+                                                    <li className='py-1 px-2'>2.0 TDI (8VA) 110kw</li>
+                                                    <li className='py-1 px-2'>2.0 TDI (8VS) 110kw</li>
+                                                    <li className='py-1 px-2'>2.0 TFSI (8V1) 140kw</li>
+                                                    <li className='py-1 px-2'>2.0 TFSI (8V7) 140kw</li>
+                                                    <li className='py-1 px-2'>2.0 TFSI (8VA) 140kw</li>
+                                                    <li className='py-1 px-2'>2.0 TFSI (8VS) 140kw</li>
+                                                    <li className='py-1 px-2'>2.0 TFSI quattro (8V7) 140kw</li>
+                                                    <li className='py-1 px-2'>2.0 TFSI quattro (8VA) 140kw</li>
+                                                    <li className='py-1 px-2'>2.0 TFSI quattro (8VS) 140kw</li>
+                                                </ul>
+                                            </div>
+                                        </Col>
+                                        <Col md={2} className='p-0'>
+                                            <div className='option_div'>
+                                                <div className='list_div'>Select Body</div>
+                                                <ul className='list-unstyled selectoption_height mb-0'>
+                                                </ul>
+                                            </div>
+                                        </Col>
+                                        <Col md={2} className='p-0'>
+                                            <div className='option_div'>
+                                                <div className='list_div'>Select Engine</div>
+                                                <ul className='list-unstyled selectoption_height mb-0'>
+                                                </ul>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row className='justify-content-md-center ClearVehicle'>
                         <Col md={6}>
                             <div className='card h-100'>
                                 <div className='card-body'>
@@ -96,7 +549,7 @@ function Home() {
                                         <p className='text-muted'><FontAwesomeIcon icon={faCar} /> 1993 Audi, 80, 1.6 E (B4) 74kw</p>
                                         <Button variant='primary' size='md' className='btn-block'>Price</Button>
                                         <hr className='mt-3 mb-2' />
-                                        <h6 className='text-muted text-center'>Clear Vehicle</h6>
+                                        <h6 className='text-muted text-center ClearVehicle' onClick={ClearVehicle}>Clear Vehicle</h6>
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +557,7 @@ function Home() {
                     </Row>
                 </Container>
             </div>
-            {/* Subscribe section End */}
+            {/* vehicle section End */}
 
             {/* Infomation Section Start */}
             <div className='infomation_section py-3'>
