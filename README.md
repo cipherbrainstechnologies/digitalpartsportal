@@ -6,6 +6,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
+<<<<<<< HEAD
 ##### Page Links
 
 ###### http://localhost:3000/
